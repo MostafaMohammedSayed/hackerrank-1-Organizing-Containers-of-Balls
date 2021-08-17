@@ -26,6 +26,24 @@ import kotlin.text.*
 
 fun organizingContainers(container: Array<Array<Int>>): String {
     // Write your code here
+    val firstGroup = container[0]
+    var type1InFirstGroup = firstGroup[0]
+    var type2InFirstGroup = firstGroup[1]
+
+    val secondGroup = container[1]
+    var type1InSecondGroup = secondGroup[0]
+    var type2InSecondGroup = secondGroup[1]
+    while (type1InSecondGroup!=0){
+        type1InFirstGroup++
+        type1InSecondGroup--
+        type2InFirstGroup--
+        type2InSecondGroup++
+        }
+    return if (type2InFirstGroup == 0 && type1InSecondGroup == 0) {
+        "Possible"
+    } else {
+        "Impossible"
+    }
 
 }
 
